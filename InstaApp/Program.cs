@@ -11,7 +11,7 @@ namespace InstaApp
             using (var chromeDriver = chromeDriverFabric.GetWebDriver())
             {
                 var authorizator = new Liker(chromeDriver);
-                authorizator.Process("accounts.txt");
+                authorizator.Process("accounts.txt", "icecube");
             }
         }
     }

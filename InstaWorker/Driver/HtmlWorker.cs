@@ -1,4 +1,6 @@
 ﻿using OpenQA.Selenium;
+using System;
+using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -44,11 +46,24 @@ namespace InstaWorker.Driver
             webElement.SendKeys(text);
         }
 
+        public ReadOnlyCollection<IWebElement> GetAllWebElements(By by)
+        {
+            return _webDriver.FindElements(by);
+        }
+
+        public void Click(IWebElement webElement, By by)
+        {
+            var innerElem = webElement.FindElement(by);
+            if (innerElem != null)
+            {
+                innerElem.Click();
+            }
+        }
+
         public void SetTextToWebElement(By by, string text)
         {
             var elem = _webDriver.FindElement(by);
-            elem.Clear();
-            elem.SendKeys(text);
+            SetTextToWebElement(elem, text);
         }
 
         public void Click(By by)
