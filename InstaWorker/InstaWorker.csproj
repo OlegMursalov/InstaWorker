@@ -47,10 +47,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountDTO.cs" />
-    <Compile Include="Authorizator.cs" />
-    <Compile Include="ChromeDriverFabric.cs" />
+    <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="Liker.cs" />
+    <Compile Include="Driver\ChromeDriverFabric.cs" />
+    <Compile Include="Driver\DriverFabric.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings\Consts.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

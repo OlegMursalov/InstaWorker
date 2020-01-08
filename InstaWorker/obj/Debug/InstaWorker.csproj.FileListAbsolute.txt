@@ -1,0 +1,9 @@
+C:\Users\Олег\source\repos\InstaApp\InstaWorker\bin\Debug\InstaWorker.dll
+C:\Users\Олег\source\repos\InstaApp\InstaWorker\bin\Debug\InstaWorker.pdb
+C:\Users\Олег\source\repos\InstaApp\InstaWorker\bin\Debug\WebDriver.dll
+C:\Users\Олег\source\repos\InstaApp\InstaWorker\bin\Debug\WebDriver.xml
+C:\Users\Олег\source\repos\InstaApp\InstaWorker\obj\Debug\InstaWorker.csprojAssemblyReference.cache
+C:\Users\Олег\source\repos\InstaApp\InstaWorker\obj\Debug\InstaWorker.csproj.CoreCompileInputs.cache
+C:\Users\Олег\source\repos\InstaApp\InstaWorker\obj\Debug\InstaWorker.csproj.CopyComplete
+C:\Users\Олег\source\repos\InstaApp\InstaWorker\obj\Debug\InstaWorker.dll
+C:\Users\Олег\source\repos\InstaApp\InstaWorker\obj\Debug\InstaWorker.pdb

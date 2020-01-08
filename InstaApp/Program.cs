@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using InstaWorker;
+﻿using InstaWorker;
+using InstaWorker.Driver;
 
 namespace InstaApp
 {
@@ -11,8 +7,9 @@ namespace InstaApp
     {
         static void Main()
         {
-            var chromeDriver = ChromeDriverFabric.GetChromeWebDriver();
-            var authorizator = new Authorizator(chromeDriver);
+            var chromeDriverFabric = new ChromeDriverFabric("ChromeDriver\\chromedriver.exe");
+            var chromeDriver = chromeDriverFabric.GetWebDriver();
+            var authorizator = new Liker(chromeDriver);
             authorizator.Process("accounts.txt");
         }
     }
