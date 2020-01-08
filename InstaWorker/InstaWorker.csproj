@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Driver\HtmlWorker.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="Liker.cs" />
     <Compile Include="Driver\ChromeDriverFabric.cs" />
