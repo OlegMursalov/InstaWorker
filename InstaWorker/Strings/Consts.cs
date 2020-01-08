@@ -12,6 +12,7 @@
 
         public static readonly string InstaPublicationBlockCSSClass = "v1Nh3";
         public static readonly string LinkHtmlTagName = "a";
-        public static readonly string LikeDivCSSSelector = "div.AatJH";
+        public static readonly string LikeSpanCSSSelector = "span[aria-label='Нравится']";
+        public static readonly string ClosePublicationBtnCSSSelector = "button.ckWGn";
     }
 }

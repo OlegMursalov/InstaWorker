@@ -5,6 +5,7 @@ using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 
 namespace InstaWorker
@@ -44,21 +45,25 @@ namespace InstaWorker
                     if (isAuthorized)
                     {
                         accountDTO.IsAuthorized = true;
-                        SetLikeToLastPublication(profileName);
+                        SetLikeToPublications(profileName, amountLast: 5);
                     }
                     _accounts.Add(accountDTO);
                 }
             }
         }
 
-        private void SetLikeToLastPublication(string profileName)
+        private void SetLikeToPublications(string profileName, int amountLast)
         {
+            var rand = new Random();
             _webDriver.Navigate().GoToUrl($"{Consts.InstaMainUri}/{profileName}");
-            foreach (var webElement in _htmlWorker.GetAllWebElements(By.ClassName(Consts.InstaPublicationBlockCSSClass)))
+            var elemCollection = _htmlWorker.GetAllWebElements(By.ClassName(Consts.InstaPublicationBlockCSSClass)).Take(amountLast);
+            foreach (var webElement in elemCollection)
             {
+                Thread.Sleep(rand.Next(1, 10) * 100);
                 _htmlWorker.Click(webElement, By.TagName(Consts.LinkHtmlTagName));
-                var likeDiv = _htmlWorker.TryFindElement(By.CssSelector(Consts.LikeDivCSSSelector), 5, 1000);
-                likeDiv.Click();
+                var likeSpan = _htmlWorker.TryFindElement(By.CssSelector(Consts.LikeSpanCSSSelector), 5, 1000);
+                likeSpan.Click();
+                _htmlWorker.Click(By.CssSelector(Consts.ClosePublicationBtnCSSSelector));
             }
         }
 
