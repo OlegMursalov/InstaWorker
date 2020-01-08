@@ -17,7 +17,7 @@ namespace InstaWorker
             _webDriver = webDriver;
             _accounts = new List<AccountDTO>();
         }
-
+        
         public void Process(string fileName)
         {
             if (!File.Exists(fileName))
@@ -42,10 +42,17 @@ namespace InstaWorker
             }
         }
 
+        private void SetTextToWebElement()
+        {
+
+        }
+
         private bool Authorize(AccountDTO accountDTO)
         {
-            var mainUri = Consts.InstaMainUri;
-            _webDriver.Navigate().GoToUrl(mainUri);
+            var authorizeFormUri = Consts.InstaAuthorizeFormUri;
+            _webDriver.Navigate().GoToUrl(authorizeFormUri);
+            var userNameTextBox = _webDriver.FindElement(By.Name("username"));
+            userNameTextBox.SendKeys();
             return false;
         }
     }
